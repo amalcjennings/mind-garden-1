@@ -1,0 +1,17 @@
+{
+  "name": "stacked-notes",
+  "version": "1.0.0",
+  "description": "Stacked, linked, editable notes site for Netlify",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "test": "node scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}

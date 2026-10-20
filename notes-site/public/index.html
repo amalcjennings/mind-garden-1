@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="/" data-home></a>
+    <button class="search-trigger" data-action="search" title="Search (/ or Ctrl+K)">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg>
+      <span>Search</span><kbd>/</kbd>
+    </button>
+    <nav class="header-actions">
+      <button data-action="index">Index</button>
+      <button data-action="random">Random</button>
+      <button data-action="new" class="needs-edit primary">+ New note</button>
+      <button data-action="login" class="login-btn">Log in</button>
+    </nav>
+  </header>
+  <div class="banner" hidden></div>
+  <main id="stack" class="stack" aria-live="polite">
+    <div class="loading">Loading notes…</div>
+  </main>
+  <div id="popover" class="popover" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+</body>
+</html>

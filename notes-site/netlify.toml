@@ -1,0 +1,23 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+  # No build step: the site is plain HTML/CSS/JS. Netlify installs
+  # @netlify/blobs from package.json for the API function automatically.
+  command = "echo 'No build needed'"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Every note URL (/Some_note?stackedNotes=...) loads the app.
+# /api/* is handled by netlify/functions/api.mjs before this rule applies.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
